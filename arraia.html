@@ -76,17 +76,6 @@
 
         .subtitle { font-size: 1.9rem; color: #FFD700; margin-top: 8px; }
 
-        .music-btn {
-            background: rgba(255, 69, 0, 0.9);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
         .container {
             max-width: 1100px; width: 100%; margin: 0 auto;
             padding: 15px 15px 30px; position: relative; z-index: 20;
@@ -140,8 +129,7 @@
 <body>
     <div class="bandeirinhas" id="floating-bands"></div>
 
-    <!-- Música -->
-    <audio id="background-music" loop>
+    <audio id="background-music" autoplay loop>
         <source src="junina26.mp3" type="audio/mpeg">
     </audio>
 
@@ -161,7 +149,6 @@
             <button class="tab-button" onclick="openTab(event, 'rsvp')">🌽 Confirmar</button>
         </div>
 
-        <!-- Conteúdo das abas (mantido igual) -->
         <div id="sobre" class="tab-content active">
             <h2>Bem-vindo ao Arraiá!</h2>
             <div class="info-grid">
@@ -203,7 +190,6 @@
         function createFloatingBands() {
             const container = document.getElementById('floating-bands');
             const images = ['band1.png', 'band2.png', 'band3.png'];
-            
             for (let i = 0; i < 35; i++) {
                 const band = document.createElement('div');
                 band.className = 'floating-band';
@@ -212,23 +198,16 @@
                 band.style.left = Math.random() * 98 + 'vw';
                 band.style.animationDuration = (Math.random() * 10 + 13) + 's';
                 band.style.animationDelay = '-' + Math.random() * 35 + 's';
-                band.style.opacity = Math.random() * 0.7 + 0.75;
                 container.appendChild(band);
             }
         }
 
         const music = document.getElementById('background-music');
 
-        function tryPlayMusic() {
-            music.volume = 0.75;
-            music.play().catch(() => {
-                // Se falhar, nada acontece (usuário pode interagir)
-            });
-        }
-
         window.onload = () => {
             createFloatingBands();
-            tryPlayMusic();
+            music.volume = 0.75;
+            setTimeout(() => music.play().catch(() => {}), 1000);
         };
 
         function openTab(evt, tabName) {
