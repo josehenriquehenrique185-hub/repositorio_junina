@@ -46,7 +46,7 @@
 
         header {
             text-align: center; 
-            padding: 45px 15px 25px; 
+            padding: 40px 15px 25px; 
             z-index: 30; 
             position: relative;
             background: rgba(0,0,0,0.5); 
@@ -55,7 +55,7 @@
 
         .title {
             font-family: 'Cinzel', serif; 
-            font-size: 4rem; 
+            font-size: 3.8rem; 
             color: var(--gold);
             text-shadow: 4px 4px 0 #8B0000, -3px -3px 0 #006400;
         }
@@ -67,50 +67,103 @@
         }
 
         .container {
-            max-width: 1100px; width: 100%; margin: 0 auto;
-            padding: 15px 15px 30px; position: relative; z-index: 20;
+            max-width: 1100px; 
+            width: 100%; 
+            margin: 0 auto;
+            padding: 15px 15px 40px; 
+            position: relative; 
+            z-index: 20;
         }
 
-        .tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 25px 0; }
+        .tabs { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 12px; 
+            margin: 25px 0; 
+        }
 
         .tab-button {
-            padding: 12px 24px; background: #8B4513; color: white; border: none;
-            border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s;
+            padding: 12px 24px; 
+            background: #8B4513; 
+            color: white; 
+            border: none;
+            border-radius: 50px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: 0.3s;
             font-size: 1.05rem;
         }
         .tab-button.active, .tab-button:hover {
-            background: #FFD700; color: #4B0082; transform: scale(1.08);
+            background: #FFD700; 
+            color: #4B0082; 
+            transform: scale(1.08);
         }
 
         .tab-content {
-            display: none; background: rgba(255,255,255,0.96); color: #2C0A4A;
-            padding: 35px 25px; border-radius: 25px; margin: 15px auto;
-            max-width: 920px; width: 100%; border: 7px solid #FF4500;
+            display: none; 
+            background: rgba(255,255,255,0.96); 
+            color: #2C0A4A;
+            padding: 35px 20px; 
+            border-radius: 25px; 
+            margin: 15px auto;
+            max-width: 920px; 
+            width: 100%; 
+            border: 7px solid #FF4500;
             box-shadow: 0 15px 35px rgba(0,0,0,0.35);
         }
 
         .tab-content.active { display: block; animation: pop 0.6s ease; }
-        @keyframes pop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes pop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-        h2 { font-family: 'Cinzel', serif; color: #8B0000; text-align: center; font-size: 2.6rem; margin-bottom: 30px; }
+        h2 { 
+            font-family: 'Cinzel', serif; 
+            color: #8B0000; 
+            text-align: center; 
+            font-size: 2.5rem; 
+            margin-bottom: 30px; 
+        }
 
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; }
+        .info-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 20px; 
+            width: 100%; 
+        }
 
         .card {
-            background: #fff; padding: 25px 20px; border-radius: 20px;
-            border: 5px solid var(--gold); text-align: center;
+            background: #fff; 
+            padding: 25px 20px; 
+            border-radius: 20px;
+            border: 5px solid var(--gold); 
+            text-align: center;
         }
 
         .highlight {
             background: linear-gradient(90deg, #FFEB3B, #FF9800);
-            color: #2C0A4A; padding: 18px; border-radius: 18px;
-            text-align: center; font-weight: bold; margin: 25px 0;
+            color: #2C0A4A; 
+            padding: 18px; 
+            border-radius: 18px;
+            text-align: center; 
+            font-weight: bold; 
+            margin: 25px 0;
             border: 4px dashed #8B0000;
         }
 
+        /* RESPONSIVO - CELULAR */
         @media (max-width: 768px) {
-            .title { font-size: 3.2rem; }
-            .subtitle { font-size: 1.5rem; }
+            .title { font-size: 2.9rem; }
+            .subtitle { font-size: 1.45rem; }
+            h2 { font-size: 2.1rem; }
+            .tab-button { padding: 10px 18px; font-size: 1rem; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+
+        /* RESPONSIVO - Telas muito pequenas */
+        @media (max-width: 480px) {
+            .title { font-size: 2.5rem; }
+            .subtitle { font-size: 1.3rem; }
+            header { padding: 30px 10px 15px; }
         }
     </style>
 </head>
