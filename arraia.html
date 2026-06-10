@@ -1,270 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 ARRAIÁ RAIZ 2026 🎉</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;600&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arraiá Raiz 2026</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(#4a2c0b, #8b4513);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-        :root {
-            --gold: #FFD700;
-            --red: #FF4500;
-        }
+    .header {
+      padding: 20px 10px;
+      position: relative;
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    .title-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
 
-        body {
-            background: linear-gradient(135deg, #2C0A4A, #5C1A1A, #1E3A2F);
-            background-size: 400% 400%;
-            animation: sky 20s ease infinite;
-            font-family: 'Poppins', sans-serif;
-            color: #fff;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
+    .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
 
-        @keyframes sky { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .title {
+      font-size: 3.5rem;
+      font-weight: bold;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+      color: #ffd700;
+      line-height: 1;
+    }
 
-        .bandeirinhas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+    .decoration {
+      width: 60px;
+      height: auto;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.6));
+    }
 
-        .floating-band {
-            position: absolute;
-            width: 85px;
-            height: 60px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            animation: floatUp linear infinite;
-            opacity: 0.85;
-        }
+    /* Responsivo - mobile */
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2.8rem;
+      }
+      .decoration {
+        width: 45px;
+      }
+      .title-row {
+        gap: 10px;
+      }
+    }
 
-        @keyframes floatUp {
-            0% { transform: translateY(110vh) rotate(0deg) scale(0.85); }
-            100% { transform: translateY(-150px) rotate(420deg) scale(1.05); }
-        }
-
-        header {
-            text-align: center; 
-            padding: 40px 15px 25px; 
-            z-index: 30; 
-            position: relative;
-            background: rgba(0,0,0,0.5); 
-            border-bottom: 8px solid var(--gold);
-        }
-
-        .title {
-            font-family: 'Cinzel', serif; 
-            font-size: 3.8rem; 
-            color: var(--gold);
-            text-shadow: 4px 4px 0 #8B0000, -3px -3px 0 #006400;
-        }
-
-        .subtitle { 
-            font-size: 1.8rem; 
-            color: #FFD700; 
-            margin-top: 8px; 
-        }
-
-        .container {
-            max-width: 1100px; 
-            width: 100%; 
-            margin: 0 auto;
-            padding: 15px 15px 40px; 
-            position: relative; 
-            z-index: 20;
-        }
-
-        .tabs { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 12px; 
-            margin: 25px 0; 
-        }
-
-        .tab-button {
-            padding: 12px 24px; 
-            background: #8B4513; 
-            color: white; 
-            border: none;
-            border-radius: 50px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            transition: 0.3s;
-            font-size: 1.05rem;
-        }
-        .tab-button.active, .tab-button:hover {
-            background: #FFD700; 
-            color: #4B0082; 
-            transform: scale(1.08);
-        }
-
-        .tab-content {
-            display: none; 
-            background: rgba(255,255,255,0.96); 
-            color: #2C0A4A;
-            padding: 35px 20px; 
-            border-radius: 25px; 
-            margin: 15px auto;
-            max-width: 920px; 
-            width: 100%; 
-            border: 7px solid #FF4500;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-        }
-
-        .tab-content.active { display: block; animation: pop 0.6s ease; }
-        @keyframes pop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-
-        h2 { 
-            font-family: 'Cinzel', serif; 
-            color: #8B0000; 
-            text-align: center; 
-            font-size: 2.5rem; 
-            margin-bottom: 30px; 
-        }
-
-        .info-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-            gap: 20px; 
-            width: 100%; 
-        }
-
-        .card {
-            background: #fff; 
-            padding: 25px 20px; 
-            border-radius: 20px;
-            border: 5px solid var(--gold); 
-            text-align: center;
-        }
-
-        .highlight {
-            background: linear-gradient(90deg, #FFEB3B, #FF9800);
-            color: #2C0A4A; 
-            padding: 18px; 
-            border-radius: 18px;
-            text-align: center; 
-            font-weight: bold; 
-            margin: 25px 0;
-            border: 4px dashed #8B0000;
-        }
-
-        /* RESPONSIVO - CELULAR */
-        @media (max-width: 768px) {
-            .title { font-size: 2.9rem; }
-            .subtitle { font-size: 1.45rem; }
-            h2 { font-size: 2.1rem; }
-            .tab-button { padding: 10px 18px; font-size: 1rem; }
-            .info-grid { grid-template-columns: 1fr; }
-        }
-
-        /* RESPONSIVO - Telas muito pequenas */
-        @media (max-width: 480px) {
-            .title { font-size: 2.5rem; }
-            .subtitle { font-size: 1.3rem; }
-            header { padding: 30px 10px 15px; }
-        }
-    </style>
+    /* Outros estilos do site (botões, etc.) */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    /* Adicione o resto do seu CSS aqui */
+  </style>
 </head>
 <body>
-    <div class="bandeirinhas" id="floating-bands"></div>
-
-    <audio id="background-music" loop>
-        <source src="junina26.mp3" type="audio/mpeg">
-    </audio>
-
-    <button id="playBtn" style="position: fixed; bottom: 20px; right: 20px; background: #FF4500; color: white; border: none; padding: 12px 20px; border-radius: 50px; font-size: 1rem; cursor: pointer; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">🎵 Tocar Música</button>
-
-    <header>
-        <h1 class="title">🎊 ARRAIÁ RAIZ 🎊</h1>
-        <p class="subtitle">20 de Junho de 2026</p>
-    </header>
-
-    <div class="container">
-        <div class="tabs">
-            <button class="tab-button active" onclick="openTab(event, 'sobre')">📜 Sobre</button>
-            <button class="tab-button" onclick="openTab(event, 'info')">📍 Informações</button>
-            <button class="tab-button" onclick="openTab(event, 'rsvp')">🌽 Confirmar</button>
-        </div>
-
-        <div id="sobre" class="tab-content active">
-            <h2>Bem-vindo ao Arraiá!</h2>
-            <div class="info-grid">
-                <div class="card"><h3>🌾 Tradição com Alegria</h3><p>Venha viver uma noite cheia de dança, música e sabores típicos do interior.</p></div>
-                <div class="card"><h3>🔥 Fogueira Gigante</h3><p>Acendimento especial com fogos e quadrilha.</p></div>
-            </div>
-            <div class="highlight">A partir das 17:30 • Traje caipira é bem-vindo!</div>
-        </div>
-
-        <div id="info" class="tab-content">
-            <h2>📍 Informações</h2>
-            <div class="info-grid">
-                <div class="card"><h3>Data</h3><p>20 de Junho de 2026</p></div>
-                <div class="card"><h3>Local</h3><p>Avenida São Paulo, 207</p></div>
-                <div class="card"><h3>Horário</h3><p>A partir das 17:30</p></div>
-            </div>
-        </div>
-
-        <div id="rsvp" class="tab-content">
-            <h2>🌽 Confirme sua Presença</h2>
-            <div class="card" style="background: linear-gradient(#FF4500, #FFD700); color: #2C0A4A;">
-                <p style="font-size: 1.35rem; margin-bottom: 25px;">
-                    Por favor, informe seu nome ao confirmar:
-                </p>
-                <a href="https://wa.me/5512991584686?text=Ol%C3%A1!%20Confirmo%20minha%20presen%C3%A7a%20no%20Arrai%C3%A1%20Raiz%202026.%0A%0AMeu%20nome%20%C3%A9%3A%20" 
-                   target="_blank"
-                   style="background:#25D366; color:white; padding:20px 50px; border-radius:50px; text-decoration:none; font-size:1.5rem; display:inline-block;">
-                   CONFIRMAR NO WHATSAPP
-                </a>
-            </div>
-        </div>
+  <div class="header">
+    <!-- Enfeites de fundo (bandeirinhas) -->
+    <div style="position: absolute; top: 10px; left: 10px; opacity: 0.8;">
+      <!-- Coloque aqui imagens ou SVG de bandeirinhas -->
     </div>
 
-    <footer style="text-align:center; padding:25px; background:rgba(0,0,0,0.7); margin-top:30px; z-index:30; position:relative;">
-        <p>Arraiá Raiz 2026 • Com muito carinho!</p>
-    </footer>
+    <div class="title-container">
+      <!-- Primeira linha: ARRAIÁ + enfeites -->
+      <div class="title-row">
+        <img src="https://via.placeholder.com/60x60?text=🌽" alt="enfeite" class="decoration"> <!-- Substitua pela imagem real -->
+        <span class="title">ARRAIÁ</span>
+        <img src="https://via.placeholder.com/60x60?text=🌽" alt="enfeite" class="decoration">
+      </div>
 
-    <script>
-        function createFloatingBands() {
-            const container = document.getElementById('floating-bands');
-            const images = ['band1.png', 'band2.png', 'band3.png'];
-            for (let i = 0; i < 35; i++) {
-                const band = document.createElement('div');
-                band.className = 'floating-band';
-                const randomImage = images[Math.floor(Math.random() * images.length)];
-                band.style.backgroundImage = `url('${randomImage}')`;
-                band.style.left = Math.random() * 98 + 'vw';
-                band.style.animationDuration = (Math.random() * 10 + 13) + 's';
-                band.style.animationDelay = '-' + Math.random() * 35 + 's';
-                container.appendChild(band);
-            }
-        }
+      <!-- Segunda linha: RAIZ + enfeites -->
+      <div class="title-row">
+        <img src="https://via.placeholder.com/60x60?text=🎉" alt="enfeite" class="decoration">
+        <span class="title">RAIZ</span>
+        <img src="https://via.placeholder.com/60x60?text=🎉" alt="enfeite" class="decoration">
+      </div>
+    </div>
 
-        const music = document.getElementById('background-music');
-        const playBtn = document.getElementById('playBtn');
+    <p style="font-size: 1.4rem; margin: 10px 0; color: #ffeb3b;">20 de Junho de 2026</p>
+  </div>
 
-        function playMusic() {
-            music.volume = 0.75;
-            music.play().catch(() => {});
-        }
+  <!-- Resto da página (botões, conteúdo, etc.) -->
+  <div class="buttons">
+    <button style="background: #ffd700; color: #4a2c0b;">Sobre</button>
+    <button style="background: #c41e3a;">Informações</button>
+    <button style="background: #4caf50;">Confirmar</button>
+  </div>
 
-        window.onload = () => {
-            createFloatingBands();
-            setTimeout(playMusic, 1000);
-
-            playBtn.addEventListener('click', () => {
-                playMusic();
-                playBtn.style.display = 'none';
-            });
-        };
-
-        function openTab(evt, tabName) {
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-            document.getElementById(tabName).classList.add('active');
-            evt.currentTarget.classList.add('active');
-        }
-    </script>
+  <!-- Seção de boas-vindas -->
+  <div style="background: white; color: #4a2c0b; margin: 20px; padding: 20px; border-radius: 15px;">
+    <h1>BEM-VINDO AO ARRAIÁ!</h1>
+    <p>Tradição com Alegria...</p>
+  </div>
 </body>
 </html>
