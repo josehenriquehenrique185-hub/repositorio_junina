@@ -46,35 +46,32 @@
 
         header {
             text-align: center; 
-            padding: 40px 20px 20px; 
+            padding: 30px 15px 20px; 
             z-index: 30; 
             position: relative;
             background: rgba(0,0,0,0.5); 
             border-bottom: 8px solid var(--gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
         }
 
         .chico {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
+            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
+            margin: 0 auto 15px;
         }
 
         .title {
             font-family: 'Cinzel', serif; 
-            font-size: 4.2rem; 
+            font-size: 3.8rem; 
             color: var(--gold);
             text-shadow: 4px 4px 0 #8B0000, -3px -3px 0 #006400;
+            margin: 10px 0;
         }
 
-        .subtitle { font-size: 1.9rem; color: #FFD700; margin-top: 8px; }
+        .subtitle { font-size: 1.7rem; color: #FFD700; }
 
         .container {
             max-width: 1100px; width: 100%; margin: 0 auto;
@@ -119,10 +116,9 @@
         }
 
         @media (max-width: 768px) {
-            .title { font-size: 3.4rem; }
-            .subtitle { font-size: 1.6rem; }
-            h2 { font-size: 2.2rem; }
-            .chico { width: 85px; height: 85px; }
+            .title { font-size: 2.9rem; }
+            .subtitle { font-size: 1.45rem; }
+            .chico { width: 90px; height: 90px; }
         }
     </style>
 </head>
@@ -133,16 +129,13 @@
         <source src="junina26.mp3" type="audio/mpeg">
     </audio>
 
-    <button class="music-btn" id="playBtn" style="position: fixed; bottom: 20px; right: 20px; background: #FF4500; color: white; border: none; padding: 12px 20px; border-radius: 50px; font-size: 1rem; cursor: pointer; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">🎵 Tocar Música</button>
+    <button id="playBtn" style="position: fixed; bottom: 20px; right: 20px; background: #FF4500; color: white; border: none; padding: 12px 20px; border-radius: 50px; font-size: 1rem; cursor: pointer; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">🎵 Tocar Música</button>
 
     <header>
-        <!-- Chico da esquerda -->
+        <!-- Chico Bento acima do título -->
         <div class="chico" style="background-image: url('chico.png');"></div>
-        
-        <div>
-            <h1 class="title">🎊 ARRAIÁ RAIZ 🎊</h1>
-            <p class="subtitle">20 de Junho de 2026</p>
-        </div>
+        <h1 class="title">ARRAIÁ RAIZ</h1>
+        <p class="subtitle">20 de Junho de 2026</p>
     </header>
 
     <div class="container">
